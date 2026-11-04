@@ -9,7 +9,8 @@ public class RotatingObstacle : MonoBehaviour
     {
         transform.DOLocalRotate(new Vector3(0, 360, 0), duration, RotateMode.FastBeyond360)
             .SetEase(Ease.Linear)
-            .SetLoops(-1, LoopType.Restart);
-            
+            .SetLoops(-1, LoopType.Restart)
+            .SetLink(gameObject); // Para que al destruir el objeto se destruya tambien el tween
+
     }
 }
